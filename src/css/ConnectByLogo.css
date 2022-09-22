@@ -1,0 +1,12 @@
+#logos-container {
+    display: flex;
+    padding: 10px 10px;
+    background: #ceb698;
+    justify-content: space-around;
+}
+
+#logos-container a {
+    color: #f3ece4;
+    text-decoration: none;
+}
+

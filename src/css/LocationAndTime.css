@@ -1,0 +1,56 @@
+#locationAndTime-container {
+    /* padding-top: 40px;
+    padding-bottom: 40px; */
+    position: relative;
+    background: #eee097;      /*ecd978 */
+    border: 30px solid #ebd568;
+}
+
+#locationAndTime-header {
+    font-size: 30px;
+    font-weight: bold;
+    color: #7c3392;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+#locationAndTime-container .details {
+    margin: 16px 5%;
+    /* margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 16px; */
+    text-align: right;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #7c3392; /*92439B  */
+}
+
+#locationAndTime-container .details .tourLink {
+    margin-right: 0;
+}
+
+#locationAndTime-container .tourLink {
+    margin: 16px 5%;
+    /* margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 16px; */
+    text-align: right;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #7c3392; /*92439B  */
+}
+
+#locationAndTime-container iframe {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#milkChurn {
+    display: block;
+    position: absolute;
+    top: -76px;
+    left: -1px;
+    width: 20%;
+}
+
+

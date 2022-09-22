@@ -1,0 +1,37 @@
+#navBar-container {
+    background: #8B0000;
+    text-align: right;
+    height: 52px;
+    width: 100%;
+}
+
+#navBar-container svg {
+    margin: 2px 14px 2px auto;
+}
+
+#info-container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    text-align: right;
+    background: #8B0000;
+    /* opacity: 0.5; */
+    color: #FFFFE0;
+    /* height: 100vh; */
+    width: 100%;
+    padding-bottom: 30px;
+    box-shadow: 0px 5px 14px #333;
+}
+
+#info-container svg {
+    margin-top: 10px;
+    margin-right: 23px;
+    margin-bottom: 20px;
+}
+
+#info-container p {
+    margin-right: 23px;
+    font-size: 20px;
+    line-height: 3;
+}

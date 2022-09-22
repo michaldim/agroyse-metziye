@@ -1,0 +1,47 @@
+#whoCanCome-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: #ffffec; 
+    position: relative;
+}
+
+#whoCanCome-container .svgGrandfather {
+    flex-basis: 50%;
+}
+
+#whoCanCome-container .svgGrandfather p {
+    margin-bottom: 35px;
+    font-size: 18px;
+}
+
+#whoCanCome-container #whoCanCome-header {
+    flex-basis: 100%;
+    padding-bottom: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #483697;
+}
+
+#whoCanCome-container #travelers-container #travelers {
+    padding-bottom: 6px;
+}
+
+/* #radio-container {
+    position: absolute;
+    top: -38px;
+    right: 15px;
+    width: 100%;
+    
+} */
+
+#radio {
+    display: block;
+    width: 35%;
+    position: absolute;
+    top: -38px;
+    right: 15px;
+}
+
