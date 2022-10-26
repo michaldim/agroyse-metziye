@@ -1,5 +1,4 @@
 import soldier from '../../images/soldier-medium-cut.jpg'
-// import '../css/Gallery.css'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'

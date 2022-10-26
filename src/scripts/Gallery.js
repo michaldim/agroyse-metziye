@@ -1,5 +1,5 @@
 import '../css/Gallery.css'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import GalleryComp4 from './imagesComponents/GalleryComp4'
 import GalleryComp5 from './imagesComponents/GalleryComp5'
 import GalleryComp6 from './imagesComponents/GalleryComp6'
@@ -11,17 +11,31 @@ import GalleryComp1 from './imagesComponents/GalleryComp1'
 
 const Gallery = () => {
 
+    const ref = useRef(null);
     const [untilMounts, setUntilMounts] = useState(true)
 
-    setTimeout(() => {
-        setUntilMounts(false);
-    }, 200);
+
+    // ref.current.clientHeight is the height of the #gallery-container div
+    // window.innerHeight is the height of the screen
+    useEffect(() => {
+        const fastInterval = setInterval(() => {
+            if (ref.current.clientHeight > window.innerHeight) {
+                setUntilMounts(false)
+                clearInterval(fastInterval)
+            }
+        }, 100)
+    }, [])
+
 
     return (  
-        <div className="gallery-container">
-            {/* Since the divs that surround the images start in height:0, I give them 
-            200ms to get their real height, so the animation will start when they are in
-            view and not at the loading of this page */}
+        <div className="gallery-container" ref={ref}>
+            {/*The animation of the gallery components started to work while the divs that
+            surrounded the img tags (inside of these components) were still in height of 0, 
+            so the users didn't see the animation of the images that were outside the screen. 
+            In order to prevent that, I made an interval in the useEffect above, that checks 
+            if the images started to get their real height, and when they did, the #untilMounts 
+            div disappears and the animation starts (The animation works only when the images 
+            are in view*/}
             {untilMounts && <div id='untilMounts' style={{height: '100vh'}}></div>}
             <GalleryComp1 />
             <GalleryComp2 />

@@ -1,5 +1,4 @@
 import farm from '../../images/farm-medium.jpg'
-// import '../css/Gallery.css'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
