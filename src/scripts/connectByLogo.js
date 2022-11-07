@@ -1,12 +1,19 @@
 import '../css/ConnectByLogo.css'
+import useWhatsappLink from '../hooks/useWhatsappLink';
+
 
 
 const ConnectByLogo = () => {
+
+
+    const {adminWhatsappLink} = useWhatsappLink();
+
+
     return (  
         <div id="logos-container">
 
             {/* whatsapp logo */}
-            <a href="https://wa.me/qr/VHVL2VKJFFUOA1">
+            <a href={`${adminWhatsappLink}`}>
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="40px" height="40px" x="0px" y="0px"
                 viewBox="0 0 30.667 30.667" style={{enableBackground: "new 0 0 30.667 30.667"}}
                 xmlSpace="preserve">

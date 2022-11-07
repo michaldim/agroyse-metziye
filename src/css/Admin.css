@@ -1,0 +1,17 @@
+#adminContainer {
+    height: 100vh; /*calc(100vh - 132.4px)*/
+    width: 100vw;
+    background-size: cover;
+    background-position: 38% 0%;
+    position:relative;    
+}
+
+#adminBlackCover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.45;
+    height: 100vh ;
+    width: 100vw;
+}

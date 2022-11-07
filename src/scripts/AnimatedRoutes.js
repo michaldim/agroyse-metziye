@@ -4,6 +4,8 @@ import Home from './Home';
 import Gallery from './Gallery';
 import { AnimatePresence, useScroll } from "framer-motion";
 import NavigationBar from "./NavigationBar";
+import Questions from "./Questions";
+import Admin from "./Admin";
 
 
 const AnimatedRoutes = () => {
@@ -27,6 +29,8 @@ const AnimatedRoutes = () => {
                 <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<Home />} />
                     <Route path="/gallery" element={<Gallery />} />
+                    <Route path="/questions" element={<Questions />} />
+                    <Route path="/admin" element={<Admin />} />
                 </Routes>
             </AnimatePresence>
         </div>

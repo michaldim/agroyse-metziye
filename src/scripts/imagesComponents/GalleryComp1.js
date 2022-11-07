@@ -1,9 +1,7 @@
 import shopkeeper from '../../images/shopkeeper.jpg'
-import { motion } from 'framer-motion'
-import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useAnimation } from 'framer-motion'
-
+import GalleryImgAnimations from './GalleryImgAnimations'
 
 
 const GalleryComp1 = () => {
@@ -11,40 +9,21 @@ const GalleryComp1 = () => {
     const [ref, inView] = useInView({triggerOnce: true})
     const animationFromRight = useAnimation()
 
-    useEffect(() => {
-        console.log('pic 1 in view', inView)
-        if(inView) {
-            animationFromRight.start({
-                x: 0,
-                opacity: 1,
-                scale: 1,
-                transition: {
-                    // duration: 0.5,
-                    duration: 0.6,
-                    ease: 'easeOut'
-                }
-            })
-            // setOccuredOnce(true);
-        }
-        if(!inView) {
-            // if (occuredOnce === true ) {
-            //     console.log('do nothing')
-            // } else {
-                animationFromRight.start({
-                    x: '100vw',
-                    opacity: 0,
-                    scale: 0.1
-                })
-        } 
-    },[inView])
-
        
     return (  
             <div className='addingGradient-container' id="img1" ref={ref}>
-                <motion.div animate={animationFromRight}>
-                    <img src={shopkeeper} alt='מכולת' />
-                    <div className="gradient"></div>
-                </motion.div>
+                <GalleryImgAnimations 
+                    inView={inView} 
+                    animationDirection={animationFromRight} 
+                    imgNum={1}
+                    scaleInView={1} 
+                    durationInView={0.6}
+                    xNotInView='100vw'
+                    yNotInView={0}
+                    scaleNotInView={0.1}
+                    imgSrc={shopkeeper}
+                    imgAlt='מכולת'
+                />
             </div>
     );
 }

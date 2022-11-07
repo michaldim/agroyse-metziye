@@ -6,11 +6,14 @@ import { useInView } from "react-intersection-observer";
 import WhoCanCome from './WhoCanCome'
 import LocationAndTime from "./LocationAndTime";
 import AnimationToSide from "./AnimationToSide";
+import useWhatsappLink from '../hooks/useWhatsappLink';
 
 
 const Home = () => {
 
     const [ref, inView ] = useInView()
+
+    const {adminWhatsappLink} = useWhatsappLink();
 
     return (  
         <div>
@@ -22,7 +25,7 @@ const Home = () => {
             <div id="kovesetImg-container">
                 <img id="kovesetGif" src={laundry} alt="כובסת"/>
                 <div id="darkBackground"></div>
-                <a href="https://wa.me/qr/VHVL2VKJFFUOA1" className="ticketsButton">
+                <a href={`${adminWhatsappLink}`} className="ticketsButton">
                     <p>לתיאום ביקור</p>
                 </a>
                 <div id="drorWithElmet-container" ref={ref}>

@@ -82,8 +82,14 @@ const NavigationBar = ({info, setInfo}) => {    // The prop comes from AnimatedR
                             navigate('/gallery');
                             setInfo(false);
                         }}>גלריה</p>
-                        <p>שאלות ותשובות</p>
-                        <p>כניסה למערכת</p>
+                        <p onClick={() => {
+                            navigate('/questions');
+                            setInfo(false);
+                        }}>שאלות ותשובות</p>
+                        <p onClick={() => {
+                            navigate('/admin');
+                            setInfo(false);
+                        }}>כניסה למערכת</p>
                     </motion.div>
                 )}
             </AnimatePresence>

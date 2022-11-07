@@ -1,0 +1,67 @@
+#signInBox {
+    width: 80%;
+    height: auto;
+    padding-bottom: 45px;
+    opacity: 1;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 1);
+    text-align: center;
+    margin: 25% auto auto;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 52px;
+    left: 10%;
+}
+
+#signInBox p {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10% auto;
+}
+
+#signInBox input {
+    width: 80%;
+    height: 34px;
+    margin-bottom: 17px;
+}
+
+#signInBox input[type="email"], 
+#signInBox input[type="password"] {
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid rgba(255, 255, 255, 1);
+    color: white;
+}
+
+#signInBox input[type="email"]::placeholder, 
+#signInBox input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#signInBox input[type="submit"] {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 10px;
+}
+
+#signInBox #heightHolder {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 0);
+    margin-bottom: -3em;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#signInBox #loginErr {
+    text-align: center;
+    color: red;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    bottom: calc(1em + 5px);
+    margin-bottom: -3em;
+}
+
+#signInBox #loginErr span {
+    background: rgba(255, 255, 255, 0.8);
+}
