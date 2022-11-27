@@ -4,12 +4,11 @@ import ClosingXSVG from './SVGs/ClosingXSVG';
 import { motion } from "framer-motion";
 
 
-const PopUp = ({set, reveal, sonId}) => {    
-
+const PopUp = ({set, reveal, sonId}) => {    //set and sonId comes from Home.js and ConnectByLogo.js
+                                            //reveal comes from ConnectByLogo.js
     const closePopUps = () => {
         set(false); 
     }
-
     
     return (  
         <div>
@@ -19,7 +18,7 @@ const PopUp = ({set, reveal, sonId}) => {
                             <ClosingXSVG size='25px' color="#555"/>
                         </div>
                         {!reveal && <p style={{paddingBottom: '18px'}}>על מנת לתאם ביקור יש לשלוח הודעת ווטסאפ למספר <span style={{fontWeight: 'bold'}}>052-8048222</span> ולציין את שמך, את תאריך הביקור המבוקש ואת מספר המבקרים.<br/> תוך מספר שעות נחזור אליך ונתאם יחד את הגעתך.</p>}
-                        <p>על מנת לשלוח הודעת ווטסאפ מהמחשב, עליך להוריד את אפליקציית <span style={{color: '#1aba2a'}}>WhatsApp Messenger</span></p>
+                        <p>על מנת לשלוח הודעת ווטסאפ מהמחשב, עליך להוריד את אפליקציית<br/> <span style={{color: '#1aba2a'}}>WhatsApp Messenger</span></p>
                         <a href='https://www.whatsapp.com/download' target="_blank" rel="noopener noreferrer">להורדה</a>
                         <p className='dontNeedToDownload'>האפליקציה כבר מותקנת אצלך על המחשב?</p>
                         <a className='popUpSendUsMessage' href='whatsapp://send?phone=972528048222'>שלח לנו הודעה</a>

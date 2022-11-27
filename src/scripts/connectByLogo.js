@@ -8,9 +8,11 @@ import { useState, useEffect } from 'react';
 import ClosingXSVG from './SVGs/ClosingXSVG';
 import { motion, useScroll } from 'framer-motion';
 import PopUp from './PopUp';
+import { useContext } from 'react';
+import { WhatsAppContext } from './context/WhatsAppContext';
 
 
-const ConnectByLogo = ({open}) => { //this 'open' comes from App.js and it controlls the popUp inside Home.js 
+const ConnectByLogo = () => {  
 
     const isDesktopOrLaptop = useMediaQuery({query: '(min-width: 1224px)'})
 
@@ -18,7 +20,9 @@ const ConnectByLogo = ({open}) => { //this 'open' comes from App.js and it contr
 
     const {adminWhatsappLink} = useWhatsappLink();
 
-    const [reveal, setReveal] = useState(false)
+    const { open } = useContext(WhatsAppContext) //this 'open' comes from WhatsAppContext.js and it controlls the popUp inside Home.js
+
+    const [reveal, setReveal] = useState(false) //this controlls the whatsApp popUp in this component
 
     const { scrollY } = useScroll();
 
@@ -75,25 +79,9 @@ const ConnectByLogo = ({open}) => { //this 'open' comes from App.js and it contr
             }
 
             {reveal && <PopUp set={setReveal} reveal={reveal} sonId='whatsAppDownload-miniContainer'/>}
-                {/* // <div>
-                //     {isDesktopOrLaptop && (
-                //         <div className='whatsAppDownload-container'>
-                //             <motion.div className='whatsAppDownload-miniContainer' id='whatsAppDownload-miniContainer'  initial={{y: -2000}} animate={{y: 0}} transition={{duration: 0.8, type: 'spring', stiffness: 110}}>
-                //                 <div className='popUpX' onClick={() => setClose(false)}>
-                //                     <ClosingXSVG size='25px' color="#555"/>
-                //                 </div>
-                //                 <p id='download'>על מנת לשלוח הודעת ווטסאפ מהמחשב, עליך להוריד את אפליקציית <br/><span style={{color: '#1aba2a'}}>WhatsApp Messenger</span></p>
-                //                 <a href='https://www.whatsapp.com/download' target="_blank" rel="noopener noreferrer">להורדה</a>
-                //                 <p id='dontNeedToDownload'>האפליקציה כבר מותקנת אצלך על המחשב?</p>
-                //                 <a id='popUpSendUsMessage' href='whatsapp://send?phone=972528048222'>שלח לנו הודעה</a>
-                //                 <WhatsAppSVG color='#1aba2a' width='30px' height='30px'/>
-                //             </motion.div>
-                //         </div>
-                //     )}
-                // </div> */}
-            
-            
+               
 
+               
             {/* phone logo */}
             <a id='phone' href="tel:+972528048222">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={size} height={size} x="0px" y="0px"

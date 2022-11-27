@@ -12,6 +12,8 @@ import { useMediaQuery } from 'react-responsive';
 import { motion, useScroll } from "framer-motion";
 import PopUp from './PopUp'
 import { useEffect } from 'react'
+import { useContext } from 'react'
+import { WhatsAppContext } from './context/WhatsAppContext'
 
 
 const buttonVariants = {
@@ -28,7 +30,7 @@ const buttonVariants = {
 }
 
 
-const Home = ({open, setOpen}) => { //These props come from AnimatedRoutes.js
+const Home = () => { 
 
     const isDesktopOrLaptop = useMediaQuery({query: '(min-width: 1224px)'})
 
@@ -36,14 +38,17 @@ const Home = ({open, setOpen}) => { //These props come from AnimatedRoutes.js
 
     const {adminWhatsappLink} = useWhatsappLink()
 
+    const { open, changeOpenStatus } = useContext(WhatsAppContext)  //this 'open' comes from WhatsAppContext.js and it controlls the whatsApp popUp inside this component
+
     const { scrollY } = useScroll()
 
-    // When we scroll, the popUp will get closed
+    // When we scroll, the popUp will get closed:
     useEffect(() => {
         return scrollY.onChange(() => {
-            setOpen(false)
+            changeOpenStatus(false)
         })
     }, [scrollY])
+
 
     //targets for whatsApp link:
     let target;
@@ -76,7 +81,7 @@ const Home = ({open, setOpen}) => { //These props come from AnimatedRoutes.js
                 )}
                 {isDesktopOrLaptop && (
                     <motion.div className="ticketsButton" 
-                        onClick={() => setOpen(true)}
+                        onClick={() => changeOpenStatus(true)}
                         variants={buttonVariants}
                         animate='visible'
                     >
@@ -84,7 +89,7 @@ const Home = ({open, setOpen}) => { //These props come from AnimatedRoutes.js
                     </motion.div>
                 )}
 
-                {open && <PopUp set={setOpen} sonId='connectUs-miniContainer'/>}
+                {open && <PopUp set={changeOpenStatus} sonId='connectUs-miniContainer'/>}
 
                 {isDesktopOrLaptop && <img id="whiteLogo" src={whiteLogo} alt="א גרוייסע מציאה"/>}
                 {!isDesktopOrLaptop &&

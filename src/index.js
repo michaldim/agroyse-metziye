@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { WhatsAppProvider } from './scripts/context/WhatsAppContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <WhatsAppProvider>
+      <App />
+    </WhatsAppProvider>
   </React.StrictMode>
 );
 

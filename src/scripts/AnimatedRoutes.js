@@ -8,7 +8,7 @@ import Questions from "./Questions";
 import Admin from "./Admin";
 
 
-const AnimatedRoutes = ({open, setOpen}) => {
+const AnimatedRoutes = () => {
 
     const location = useLocation() // useLocation is the only way to make Routes animation work (comparing to animation on an element inside a component)
     const [info, setInfo] = useState(false) //When info = false, the navigation bar will be closed
@@ -28,7 +28,7 @@ const AnimatedRoutes = ({open, setOpen}) => {
             <NavigationBar info={info} setInfo={setInfo} />
             <AnimatePresence mode={"wait"} onExitComplete={() => setInfo(false)}> 
                 <Routes location={location} key={location.pathname}>
-                    <Route path="/" element={<Home open={open} setOpen={setOpen}/>} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/gallery" element={<Gallery />} />
                     <Route path="/questions" element={<Questions />} />
                     <Route path="/admin" element={<Admin />} />
