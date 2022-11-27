@@ -3,6 +3,7 @@
     padding-bottom: 40px; */
     position: relative;
     background: #eee097;      /*ecd978 */
+    height: 100%;
     border: 30px solid #ebd568;
 }
 
@@ -53,4 +54,86 @@
     width: 20%;
 }
 
+/* 
+@media screen and (min-width: 1224px) {
 
+    #locationAndTime-container {
+        flex-basis: 33.3333%;
+        order: 6;
+        border: none;
+        position: relative;
+        height: auto;
+        /* border: 0 solid #ebd568; *
+        
+    }
+
+    #locationAndTime-header {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        /* background: #eee097;   *
+        background: #ceb3a7;
+    }
+
+    #locationAndTime-header span {
+        position: relative;
+        top: 40%;
+        font-weight: lighter;
+        font-size: 40px;
+        color: #fefee8;
+        z-index: 2;
+    }
+
+    #details-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        height: fit-content;
+    }
+
+    #locationAndTimeOpenningQuestion {
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* right: 0;
+        bottom: 0; *
+        margin: auto;
+        z-index: 2;
+    }
+
+    /* #mapIframe-container {
+        position: relative;
+        padding-bottom: 75%; This is the aspect ratio 
+        height: 0;
+        overflow: hidden;
+    } */
+
+    /* #mapIframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    } *
+    
+    #locationAndTime-container .details {
+        margin: 0 5%;
+    }
+
+    #locationAndTime-container iframe {
+        margin-bottom: 0;
+    }
+
+}
+
+ */
+
+ @media screen and (min-width: 1224px) {
+
+    #locationAndTime-container {
+        order: 5; 
+    }
+}

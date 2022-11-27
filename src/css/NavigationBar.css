@@ -35,3 +35,40 @@
     font-size: 20px;
     line-height: 3;
 }
+
+
+@media screen and (min-width: 1224px) {
+
+    #navBar-container {
+        display: none;
+    }
+
+    #navBar-LaptopAndDesktopContainer {
+        background: rgba(0, 0, 0, 0);
+        z-index: 3;
+        position: fixed;
+        /* text-align: right; */
+        height: 52px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    #navBar-LaptopAndDesktopContainer p {
+        /* color: #b4b4aa; */
+        /* color: #eee097; */
+        color: #e4cf69;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: 24px;
+        align-self: center;
+        margin: auto 28px;
+        cursor: pointer;
+        /* text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555; */
+    }
+
+    #navBar-LaptopAndDesktopContainer p:first-of-type {
+        margin-right: 30px;
+    }
+
+}

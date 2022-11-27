@@ -1,10 +1,22 @@
 #whoCanCome-container{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     padding-top: 40px;
     padding-bottom: 40px;
     background: #ffffec; 
+    position: relative; */
+    display: block;
+    background: #ffffec;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
+}
+
+#allKindOfVisitors-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
     position: relative;
 }
 
@@ -45,3 +57,61 @@
     right: 15px;
 }
 
+/* 
+@media screen and (min-width: 1224px) {
+
+    #whoCanCome-container {
+        flex-basis: 33.3333%;
+        order: 3;
+        position: relative;
+        background: #ffffec;
+        text-align: center;
+        padding: 0;
+        display: block;
+    }
+
+    #allKindOfVisitors-container {
+        display: flex;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 90%;
+        max-width: 550px;
+        height: 80%;
+        max-height: 490px;
+    }
+
+    #whoCanCome-container #whoCanCome-header {
+        position: absolute;
+        top: 0;
+        margin: 0 auto;
+        right: 0;
+        left: 0;
+        font-size: 40px;
+        font-weight: lighter;
+        /* background: #ffffec; #ebd5cc *
+        background: #f8e5de;
+        height: 100%;
+        padding-bottom: 0;
+    }
+
+    #whoCanCome-container #whoCanCome-header span {
+        position: relative;
+        top: 40%;
+        /* color: #9e0202; *
+        color: #fefee8;
+        z-index: 2;
+    }
+}
+ */
+
+ @media screen and (min-width: 1224px) {
+
+    #whoCanCome-container {
+        order: 4;
+    }
+
+ }

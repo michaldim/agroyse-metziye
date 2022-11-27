@@ -1,3 +1,7 @@
+#home-container {
+    display: block;
+}
+
 #windowImg-container {
      position: relative; 
 }
@@ -36,7 +40,7 @@
     display: block;
 }
 
-#darkBackground {
+.darkBackground {
     position: absolute;
     top: 0;
     background: rgba(0, 0, 0, 0.3);
@@ -74,37 +78,197 @@
     position: absolute;
     bottom: 100%;
     left: 20px;
-    /* -webkit-filter: drop-shadow(2px 2px 2px #666);
-    filter: drop-shadow(2px 2px 2px #666); */
 }
 
 #interestingMuseum1 {
-    background: #ecd978; /*8B0000*/
+    background: #ecd978; 
     color: #504a69;
     padding: 40px 30px;
-    /* font-family:'Times New Roman', Times, serif; */
     font-size: 30px;
 }
 
 #interestingMuseum2 {
-    background: #ceb3a7; /*8B0000*   #f3cdcd*/
+    background: #ceb3a7; 
     color: #fefee8;
     padding: 40px 30px;
-    /* font-family:'Times New Roman', Times, serif; */
     font-size: 30px;
 }
-/* 
-#radio-container {
-    position: relative;
-    width: 100%; 
-    height: 20px;
-}
 
-#radio {
-    display: block;
-    width: 30%;
-    display: block;
-    position: absolute;
-    right: 10px;
-    bottom: 0;
+
+
+/* @media screen and (min-width: 1224px) {
+    
+    #home-container {
+        display: flex;
+        flex-wrap: wrap;
+        height: calc(100vh - 111.8px); 
+        display: block;
+        overflow-y: scroll;
+    }
+
+    /* #windowImg-container {
+        flex-basis: 33.3333%;
+        order: 2;
+        display: flex;
+        height: 50%;
+    } 
+
+    /* #windowImg {
+        align-self: flex-start;
+    } 
+
+    #gradientBackground {
+        background: -webkit-linear-gradient(rgba(255, 255, 255, 0) 80%, rgb(218, 191, 155, 0.3));
+        background: linear-gradient(rgba(255, 255, 255, 0) 80%, rgb(218, 191, 155, 0.3));    
+    }
+
+    .otherDarkBackground {
+        position: absolute;
+        top: 0;
+        /* background: rgba(0, 0, 0, 0.3); 
+        background: rgba(0, 0, 0, 0);
+        height: 100%;
+        width: 100%; 
+    }
+
+    .transformedText {
+        /* flex-basis: 33.3333%; 
+        display: block;
+        position: relative;
+    }
+
+    #interestingMuseum2 {
+        /* order: 1; 
+        padding: 0;
+        user-select: none;
+        -moz-user-select: none; 
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    #oldIsrael {
+        /* order: 4;
+        padding: 0;
+        user-select: none; /*******************************************
+        -moz-user-select: none; /*******************************************
+        -webkit-user-select: none;/*******************************************
+        -ms-user-select: none;/*******************************************
+    }
+
+    .transformedText .transformedTextHeadline {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+
+    .transformedText .transformedTextHeadline span {
+        display: block;
+        text-align: center;
+        position: relative;
+        top: 40%;
+        font-size: 40px;
+        font-weight: lighter;
+        z-index: 2;
+        color: #fefee8;
+    }
+
+    .transformedText .transformedTextMainParagraph {
+        display: table;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        color: #fefee8;
+    }
+
+    .transformedText .transformedTextMainParagraph span {
+        line-height: 1.5;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 30px;
+    }
+
+    #kovesetImg-container {
+        /* flex-basis: 33.3333%;
+        order: 5; *
+        height: 100%;
+    }
+
+    #kovesetGifAsBackground {
+        background-image: url('../images/gif/laundry.gif');
+        height: 100%;
+        background-position: 0% 60%;
+        background-size: cover;
+    }
+
+    #interestingMuseum1 {
+        display: none;
+    }
+
+    #experienceHeadline {
+        background-color: #ebd5cc;
+    }
+    /* #ceb3a7 *
 } */
+
+
+@media screen and (min-width: 1224px) {
+
+    #home-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #windowImg-container {
+        order: 2;
+    }
+
+    #textualInfo-container {
+        order: 3;
+    }
+
+    #kovesetImg-container {
+        order: 1;
+        position: relative;
+        width: 100%; 
+        height: 100vh;
+    }
+
+    #kovesetGifAsBackground {
+        background-image: url('../images/gif/laundry.gif');
+        height: 100%;
+        background-position: 12% 60%;
+        background-size: 140%;
+        background-repeat: no-repeat;
+    }
+
+    .darkBackground {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .ticketsButton {
+        color: #fff;
+        border: 2px solid #e4cf69;
+        width: 25%; 
+        top: 75%;
+        cursor: pointer;
+    }
+
+    #whiteLogo {
+        position: absolute;
+        top: 20%;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        display: grid;
+        place-items: center;
+        height: 45%;
+    }
+
+
+
+}

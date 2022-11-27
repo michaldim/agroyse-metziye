@@ -1,10 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import '../css/NavigationBar.css'
 import { AnimatePresence, motion } from 'framer-motion';
+import { useMediaQuery } from 'react-responsive';
+import ClosingXSVG from './SVGs/ClosingXSVG';
 
 
 
 const NavigationBar = ({info, setInfo}) => {    // The prop comes from AnimatedRoutes.js
+
+    const isDesktopOrLaptop = useMediaQuery({query: '(min-width: 1224px)'})
 
     const navigate = useNavigate();
 
@@ -23,7 +27,7 @@ const NavigationBar = ({info, setInfo}) => {    // The prop comes from AnimatedR
 
             
             <AnimatePresence>  {/* AnimatePresence let us use exit in our animation */}
-                {info && (
+                {(info && !isDesktopOrLaptop) && (
                     <motion.div 
                         initial={{y: '-100vh'}} 
                         animate={{y: 0}} 
@@ -33,46 +37,11 @@ const NavigationBar = ({info, setInfo}) => {    // The prop comes from AnimatedR
                     >
                         
                         {/* the closing X */}
-                        <svg onClick={() => setInfo(false)} version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="30px" height="30px" x="0px" y="0px"
-                            viewBox="0 0 47.971 47.971" style={{enableBackground: "new 0 0 47.971 47.971"}} xmlSpace="preserve">
-                        <g>
-                            <path fill="#FFFFE0" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88
-                                c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242
-                                C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879
-                                s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        </svg>
-
+                        <div onClick={() => setInfo(false)}>
+                            <ClosingXSVG size='30px' color="#FFFFE0"/>
+                        </div>
+                        
+                        
                         <p onClick={() => {
                             navigate('/');
                             setInfo(false);
@@ -93,8 +62,31 @@ const NavigationBar = ({info, setInfo}) => {    // The prop comes from AnimatedR
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            {isDesktopOrLaptop && (
+                <div id="navBar-LaptopAndDesktopContainer">
+                    <p onClick={() => {
+                            navigate('/');
+                            setInfo(false);
+                        }}>עמוד הבית</p>
+
+                        <p onClick={() => {
+                            navigate('/gallery');
+                            setInfo(false);
+                        }}>גלריה</p>
+                        <p onClick={() => {
+                            navigate('/questions');
+                            setInfo(false);
+                        }}>שאלות ותשובות</p>
+                        {/* <p onClick={() => {
+                            navigate('/admin');
+                            setInfo(false);
+                        }}>כניסה למערכת</p> */}
+                </div>
+            )}
             
-        </div>  
+        </div> 
+        
     );
 
 }
