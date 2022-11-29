@@ -1,5 +1,6 @@
 import '../css/Gallery.css'
 import { useState, useEffect, useRef } from 'react'
+import { useMediaQuery } from 'react-responsive';
 import GalleryComp4 from './imagesComponents/GalleryComp4'
 import GalleryComp5 from './imagesComponents/GalleryComp5'
 import GalleryComp6 from './imagesComponents/GalleryComp6'
@@ -9,10 +10,13 @@ import GalleryComp3 from './imagesComponents/GalleryComp3'
 import GalleryComp2 from './imagesComponents/GalleryComp2'
 import GalleryComp1 from './imagesComponents/GalleryComp1'
 
+
 const Gallery = () => {
 
     const ref = useRef(null);
     const [untilMounts, setUntilMounts] = useState(true)
+
+    const isDesktopOrLaptop = useMediaQuery({query: '(min-width: 1224px)'})
 
 
     // ref.current.clientHeight is the height of the #gallery-container div
@@ -45,6 +49,7 @@ const Gallery = () => {
             <GalleryComp6 />
             <GalleryComp7 />
             <GalleryComp8 />
+            {isDesktopOrLaptop && <div id='topGradient'></div>}
         </div>
     );
 }

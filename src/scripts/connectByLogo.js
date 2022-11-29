@@ -12,6 +12,17 @@ import { useContext } from 'react';
 import { WhatsAppContext } from './context/WhatsAppContext';
 
 
+const logoAnimationVariants = {
+    hover: {
+        scale: [1, 1.4, 1, 1.4, 1],
+        transition: {
+            duration: 1
+        }
+    }
+}
+
+
+
 const ConnectByLogo = () => {  
 
     const isDesktopOrLaptop = useMediaQuery({query: '(min-width: 1224px)'})
@@ -81,7 +92,7 @@ const ConnectByLogo = () => {
             {reveal && <PopUp set={setReveal} reveal={reveal} sonId='whatsAppDownload-miniContainer'/>}
                
 
-               
+
             {/* phone logo */}
             <a id='phone' href="tel:+972528048222">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={size} height={size} x="0px" y="0px"

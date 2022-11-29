@@ -2,11 +2,23 @@ import soldier from '../../images/soldier-medium-cut.jpg'
 import { useInView } from 'react-intersection-observer'
 import { useAnimation } from 'framer-motion'
 import GalleryImgAnimations from './GalleryImgAnimations'
+import { useMediaQuery } from 'react-responsive';
 
 
 const GalleryComp4 = () => {
 
-    const [ref, inView] = useInView({triggerOnce: true})
+    const isDesktopOrLaptop = useMediaQuery({query: '(min-width: 1224px)'})
+
+    let picThreshold;
+
+    if (!isDesktopOrLaptop) {
+        picThreshold = 0;
+    } else {
+        picThreshold = 0.2;
+    }
+
+    const [ref, inView] = useInView({triggerOnce: true, threshold: picThreshold})
+
     const animationFromRight = useAnimation()
 
 
@@ -15,7 +27,6 @@ const GalleryComp4 = () => {
                 <GalleryImgAnimations 
                     inView={inView} 
                     animationDirection={animationFromRight} 
-                    imgNum={4}
                     scaleInView={1} 
                     durationInView={0.6}
                     xNotInView='100vw'

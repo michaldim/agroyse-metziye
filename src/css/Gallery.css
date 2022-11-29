@@ -40,3 +40,69 @@
     background: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgb(0, 0, 0, 0) 30%);
 }
 
+
+@media screen and (min-width: 1224px) {
+
+    .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        min-height: 100vh;
+        position: relative;
+    }
+
+    #topGradient {
+        height: 52px;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .addingGradient-container {
+        flex-basis: 50%;
+        overflow: hidden;
+    } 
+
+    #untilMounts {
+        flex-basis: 100%;
+        height: 100vh;
+    }
+
+    .gradient {
+        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0, 0) 40%, rgb(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.5) 100%);
+        background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0, 0) 40%, rgb(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.5) 100%);
+    }
+
+    .backgroundMainImages {
+        background-size: cover;
+    }
+
+    #img3 .backgroundMainImages {
+        background-position: 0% 50%;
+    }
+
+    #img4 .backgroundMainImages {
+        background-position: 0% 70%;
+    }
+
+    #img5 .backgroundMainImages {
+        background-position: 0% 0%;
+    }
+
+    #img6 .backgroundMainImages {
+        background-position: 0% 70%;
+    }
+
+    #img7 .backgroundMainImages {
+        background-position: 0% 40%;
+    }
+
+    #img8 .backgroundMainImages {
+        background-position: 0% 80%;
+    }
+
+}
+

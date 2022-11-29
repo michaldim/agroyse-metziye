@@ -2,11 +2,23 @@ import typewriter from '../../images/typewriter-medium-cut.jpg'
 import { useInView } from 'react-intersection-observer'
 import { useAnimation } from 'framer-motion'
 import GalleryImgAnimations from './GalleryImgAnimations'
+import { useMediaQuery } from 'react-responsive';
 
 
 const GalleryComp2 = () => {
 
-    const [ref, inView] = useInView({triggerOnce: true})
+    const isDesktopOrLaptop = useMediaQuery({query: '(min-width: 1224px)'})
+
+    let picThreshold;
+
+    if (!isDesktopOrLaptop) {
+        picThreshold = 0;
+    } else {
+        picThreshold = 0.2;
+    }
+
+    const [ref, inView] = useInView({triggerOnce: true, threshold: picThreshold})
+
     const animationFromAbove = useAnimation()
 
 
@@ -15,7 +27,6 @@ const GalleryComp2 = () => {
             <GalleryImgAnimations 
                 inView={inView} 
                 animationDirection={animationFromAbove} 
-                imgNum={2}
                 scaleInView={1.1} 
                 durationInView={0.8}
                 xNotInView={0}

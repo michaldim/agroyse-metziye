@@ -45,6 +45,13 @@
         display: block;
     } 
 
+    .whatsAppDownload-miniContainer p {
+        -webkit-user-select: none;        
+        -moz-user-select: none; 
+        -ms-user-select: none; 
+        user-select: none; 
+    }
+
     .whatsAppDownload-miniContainer .popUpX {
         text-align: right;
         margin-top: 20px;
