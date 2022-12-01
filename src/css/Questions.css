@@ -5,7 +5,8 @@
     background: #ffffec;      /*ecd978 */
     border: 30px solid #eee097;
     height: calc(100vh - 132.4px);
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #questions-header {
@@ -46,4 +47,30 @@
     color: #7c3392; /*92439B  */
 }
 
+
+@media screen and (min-width: 1224px) {
+
+    #questions-container {
+        height: auto;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+
+    #topGradientForQuestions {
+        height: 82px;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: -webkit-linear-gradient(#8B0000 0%, #8B0000 52px,#eee097 53px,#eee097 100%);
+        background: linear-gradient(#8B0000 0%, #8B0000 52px,#eee097 53px,#eee097 100%);
+    }
+
+    #questions-header {
+        padding-top: 94px;
+    }
+
+}
 

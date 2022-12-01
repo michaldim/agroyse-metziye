@@ -49,7 +49,7 @@ const Gallery = () => {
             <GalleryComp6 />
             <GalleryComp7 />
             <GalleryComp8 />
-            {isDesktopOrLaptop && <div id='topGradient'></div>}
+            {isDesktopOrLaptop && <div className='topGradient'></div>}
         </div>
     );
 }

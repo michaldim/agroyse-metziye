@@ -51,7 +51,7 @@
         position: relative;
     }
 
-    #topGradient {
+    .topGradient {
         height: 52px;
         width: 100vw;
         position: fixed;
