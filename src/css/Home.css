@@ -26,7 +26,6 @@
     background: #83a68e;
     color: #FFFFE0;
     padding: 40px 30px;
-    /* font-family:'Times New Roman', Times, serif; */
     font-size: 30px;
 }
 
@@ -96,126 +95,6 @@
 
 
 
-/* @media screen and (min-width: 1224px) {
-    
-    #home-container {
-        display: flex;
-        flex-wrap: wrap;
-        height: calc(100vh - 111.8px); 
-        display: block;
-        overflow-y: scroll;
-    }
-
-    /* #windowImg-container {
-        flex-basis: 33.3333%;
-        order: 2;
-        display: flex;
-        height: 50%;
-    } 
-
-    /* #windowImg {
-        align-self: flex-start;
-    } 
-
-    #gradientBackground {
-        background: -webkit-linear-gradient(rgba(255, 255, 255, 0) 80%, rgb(218, 191, 155, 0.3));
-        background: linear-gradient(rgba(255, 255, 255, 0) 80%, rgb(218, 191, 155, 0.3));    
-    }
-
-    .otherDarkBackground {
-        position: absolute;
-        top: 0;
-        /* background: rgba(0, 0, 0, 0.3); 
-        background: rgba(0, 0, 0, 0);
-        height: 100%;
-        width: 100%; 
-    }
-
-    .transformedText {
-        /* flex-basis: 33.3333%; 
-        display: block;
-        position: relative;
-    }
-
-    #interestingMuseum2 {
-        /* order: 1; 
-        padding: 0;
-        user-select: none;
-        -moz-user-select: none; 
-        -webkit-user-select: none;
-        -ms-user-select: none;
-    }
-
-    #oldIsrael {
-        /* order: 4;
-        padding: 0;
-        user-select: none; /*******************************************
-        -moz-user-select: none; /*******************************************
-        -webkit-user-select: none;/*******************************************
-        -ms-user-select: none;/*******************************************
-    }
-
-    .transformedText .transformedTextHeadline {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        display: block;
-    }
-
-    .transformedText .transformedTextHeadline span {
-        display: block;
-        text-align: center;
-        position: relative;
-        top: 40%;
-        font-size: 40px;
-        font-weight: lighter;
-        z-index: 2;
-        color: #fefee8;
-    }
-
-    .transformedText .transformedTextMainParagraph {
-        display: table;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        color: #fefee8;
-    }
-
-    .transformedText .transformedTextMainParagraph span {
-        line-height: 1.5;
-        display: table-cell;
-        vertical-align: middle;
-        padding: 0 30px;
-    }
-
-    #kovesetImg-container {
-        /* flex-basis: 33.3333%;
-        order: 5; *
-        height: 100%;
-    }
-
-    #kovesetGifAsBackground {
-        background-image: url('../images/gif/laundry.gif');
-        height: 100%;
-        background-position: 0% 60%;
-        background-size: cover;
-    }
-
-    #interestingMuseum1 {
-        display: none;
-    }
-
-    #experienceHeadline {
-        background-color: #ebd5cc;
-    }
-    /* #ceb3a7 *
-} */
-
-
 @media screen and (min-width: 1224px) {
 
     #home-container {
@@ -225,10 +104,6 @@
 
     #windowImg-container {
         order: 2;
-    }
-
-    #textualInfo-container {
-        order: 3;
     }
 
     #kovesetImg-container {
@@ -256,6 +131,10 @@
         width: 25%; 
         top: 75%;
         cursor: pointer;
+        -webkit-user-select: none;        
+        -moz-user-select: none; 
+        -ms-user-select: none; 
+        user-select: none; 
     }
 
     #whiteLogo {
@@ -267,8 +146,21 @@
         display: grid;
         place-items: center;
         height: 45%;
+        -webkit-user-select: none;        
+        -moz-user-select: none; 
+        -ms-user-select: none; 
+        user-select: none; 
     }
 
+    #textualInfo {
+        order: 3;
+        background: white;
+        position: relative;
+    }
+
+    #milkChurn {
+        opacity: 0;
+    }
 
 
 }

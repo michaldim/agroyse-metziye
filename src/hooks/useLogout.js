@@ -12,7 +12,6 @@ export const useLogout = () => {
             .then(() => {
             })
             .catch(err => {
-                console.log('err.message', err.message)
                 setErrorLoggingOut(err.message)
             })
     }

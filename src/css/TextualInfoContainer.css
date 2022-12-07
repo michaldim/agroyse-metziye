@@ -1,0 +1,55 @@
+@media screen and (min-width: 1224px) {
+
+    #textualInfo-container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        justify-content: center;
+        position: relative;
+        -webkit-user-select: none;        
+        -moz-user-select: none; 
+        -ms-user-select: none; 
+        user-select: none; 
+    }
+
+    #textualInfo-container #oldIsrael-container,
+    #textualInfo-container #interestingMuseum1-container,
+    #textualInfo-container #interestingMuseum2-container {
+        display: table;
+        height: 300px;
+        width: 250px;
+        opacity: 0;
+    }
+
+    #textualInfo-container #oldIsrael-container {
+        z-index: 3;
+    }
+
+    #textualInfo-container #interestingMuseum1-container {
+        z-index: 2;
+    }
+
+    #textualInfo-container #oldIsrael-container p,
+    #textualInfo-container #interestingMuseum1-container p,
+    #textualInfo-container #interestingMuseum2-container p
+    {
+        display: table-cell;
+        vertical-align: middle;
+        box-shadow: 5px 5px 4px #888;
+    }
+
+    #oldIsrael {
+        transform: translate(-5px, -50px) rotateZ(8deg);
+    }
+
+    #interestingMuseum1 {
+        transform: translate(2px, 0px) rotateZ(-1deg);
+    }
+
+    #interestingMuseum2 {
+        transform: translate(-2px, -40px) rotateZ(-10deg);
+
+    }
+
+}    

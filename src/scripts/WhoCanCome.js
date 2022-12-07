@@ -3,35 +3,45 @@ import radio from '../images/radio-extraTiny.png'
 import { useInView } from 'react-intersection-observer'
 import AnimationToSide from './AnimationToSide'
 import { useMediaQuery } from 'react-responsive';
-import { useState } from 'react';
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 
-const WhoCanCome = () => {
+const WhoCanCome = ({animate, transition}) => { //The prop comes from TextualInfoContainer.js
 
     const isDesktopOrLaptop = useMediaQuery({query: '(min-width: 1224px)'})
 
     const { ref, inView } = useInView({threshold: 0.2});
 
-    const [textAppears, setTextAppears] = useState(true)
+    let familySize;
+    let travelerSize;
+    let sofaSize;
+    let sofaViewBox;
+    let elementScale;
+    let animation;
 
-    const changeYourExperienceText = () => {
-        if(isDesktopOrLaptop) {
-            setTextAppears(false);
-        }
-    }
-
-    const changeYourExperienceTextBack = () => {
-        if(isDesktopOrLaptop) {
-            setTextAppears(true);
-        }
+    if (isDesktopOrLaptop) {
+        familySize = "60px";
+        travelerSize = "44px";
+        sofaSize = "60px";
+        sofaViewBox = '0 0 390.672 283.672';
+        elementScale = [1, 1.2, 1];
+        animation = animate; //from the prop
+        transition = transition; //from the prop
+    } else {
+        familySize = "80px";
+        travelerSize = "60px";
+        sofaSize = "70px";
+        sofaViewBox = '0 0 390.672 390.672';
+        elementScale = [1];
+        animation = {};
+        transition = {duration: 0, delay: 0};
     }
 
 
     return (  
 
-            <div id="whoCanCome-container">
+            <motion.div id="whoCanCome-container" animate={animation} transition={transition}>
 
                 <div>  
                     <p id="whoCanCome-header">
@@ -45,7 +55,7 @@ const WhoCanCome = () => {
                     <div id="families-container" className="svgGrandfather">
                         <div id="families">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            width="80px" height="80px" viewBox="0 0 484.829 484.829" style={{enableBackground: "new 0 0 484.829 484.829"}}
+                            width={familySize} height={familySize} viewBox="0 0 484.829 484.829" style={{enableBackground: "new 0 0 484.829 484.829"}}
                             xmlSpace="preserve">
                             <g>
                                 <g>
@@ -165,7 +175,7 @@ const WhoCanCome = () => {
 
                     <div id="travelers-container" className="svgGrandfather">
                         <div id="travelers">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="60px" height="60px" x="0px" y="0px"
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={travelerSize} height={travelerSize} x="0px" y="0px"
                             viewBox="0 0 25.944 25.944" style={{enableBackground: "new 0 0 25.944 25.944"}} xmlSpace="preserve">
                             <g>
                                 <circle style={{fill: "#b90202"}} cx="14.268" cy="2.372" r="2.372"/>
@@ -223,7 +233,7 @@ const WhoCanCome = () => {
 
                     <div id="elderlyCouple-container" className="svgGrandfather">
                         <div id="elderlyCouple">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="60px" height="60px" x="0px" y="0px"
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={travelerSize} height={travelerSize} x="0px" y="0px"
                             viewBox="0 0 464.048 464.048" style={{enableBackground: "new 0 0 464.048 464.048"}} xmlSpace="preserve">
                             <g>
                                 <path style={{fill: "#5a7663"}} d="M174.356,333.38c-5.194-22.919,8.382-46.127,30.901-52.845l48.483-14.45c-3.862-5.865-7.46-11.871-10.479-17.97
@@ -300,8 +310,8 @@ const WhoCanCome = () => {
 
                     <div id="sofa-container" className="svgGrandfather">
                         <div id="sofa">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="70px" height="70px" x="0px" y="0px"
-                            viewBox="0 0 390.672 390.672" style={{enableBackground: "new 0 0 390.672 390.672"}} xmlSpace="preserve">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={sofaSize} height={sofaSize} x="0px" y="0px"
+                            viewBox={sofaViewBox} style={{enableBackground: "new 0 0 390.672 390.672"}} xmlSpace="preserve">
                             <g>
                                 <path style={{fill: "#664522"}} d="M83.934,195.093l0.004,0.285l0.008,17.451h222.781l0.012-17.709c0.559-20.158,13.303-36.898,31.126-43.34
                                     c-9.385-33.271-39.935-57.668-76.21-57.668H129.018c-36.274,0-66.825,24.396-76.21,57.668
@@ -350,9 +360,9 @@ const WhoCanCome = () => {
                     </div>
                 </div>
                    
-                <AnimationToSide inView={inView} src={radio} id={"radio"} alt="רדיו" startingPoint={'-100vw'}/>
+                {!isDesktopOrLaptop && <AnimationToSide inView={inView} src={radio} id={"radio"} alt="רדיו" startingPoint={'-100vw'}/>}
 
-            </div>
+            </motion.div>
       
     );
 }

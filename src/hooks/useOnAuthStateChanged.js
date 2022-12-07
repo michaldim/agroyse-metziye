@@ -8,7 +8,6 @@ export const useOnAuthStateChanged = () => {
 
     const checkingAuthChange = () => {
         onAuthStateChanged(auth, user => {
-            console.log('2 user status changed, user: ', user);
             if(user) {
                 setLoginStatus(true);
             } else {

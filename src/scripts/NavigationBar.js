@@ -12,6 +12,13 @@ const NavigationBar = ({info, setInfo}) => {    // The prop comes from AnimatedR
 
     const navigate = useNavigate();
 
+    const changeRoute = (location) => {
+        navigate(location);
+        setInfo(false);
+        window.scrollTo(0, 0);
+    }
+
+
     return ( 
         <div>
             <div id="navBar-container" onClick={() => setInfo(true)}>
@@ -41,47 +48,19 @@ const NavigationBar = ({info, setInfo}) => {    // The prop comes from AnimatedR
                             <ClosingXSVG size='30px' color="#FFFFE0"/>
                         </div>
                         
-                        
-                        <p onClick={() => {
-                            navigate('/');
-                            setInfo(false);
-                        }}>עמוד הבית</p>
-
-                        <p onClick={() => {
-                            navigate('/gallery');
-                            setInfo(false);
-                        }}>גלריה</p>
-                        <p onClick={() => {
-                            navigate('/questions');
-                            setInfo(false);
-                        }}>שאלות ותשובות</p>
-                        <p onClick={() => {
-                            navigate('/admin');
-                            setInfo(false);
-                        }}>כניסה למערכת</p>
+                        <p onClick={() => changeRoute('/')}>עמוד הבית</p>
+                        <p onClick={() => changeRoute('/gallery')}>גלריה</p>
+                        <p onClick={() => changeRoute('/questions')}>שאלות ותשובות</p>
+                        <p onClick={() => changeRoute('/admin')}>כניסה למערכת</p>
                     </motion.div>
                 )}
             </AnimatePresence>
 
             {isDesktopOrLaptop && (
                 <div id="navBar-LaptopAndDesktopContainer">
-                    <p onClick={() => {
-                            navigate('/');
-                            setInfo(false);
-                        }}>עמוד הבית</p>
-
-                        <p onClick={() => {
-                            navigate('/gallery');
-                            setInfo(false);
-                        }}>גלריה</p>
-                        <p onClick={() => {
-                            navigate('/questions');
-                            setInfo(false);
-                        }}>שאלות ותשובות</p>
-                        {/* <p onClick={() => {
-                            navigate('/admin');
-                            setInfo(false);
-                        }}>כניסה למערכת</p> */}
+                    <p onClick={() => changeRoute('/')}>עמוד הבית</p>
+                    <p onClick={() => changeRoute('/gallery')}>גלריה</p>
+                    <p onClick={() => changeRoute('/questions')}>שאלות ותשובות</p>
                 </div>
             )}
             

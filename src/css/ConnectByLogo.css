@@ -10,20 +10,6 @@
     text-decoration: none;
 }
 
-/* 
-@media screen and (min-width: 1224px) {
-
-    #logos-container {
-        padding: 8px 10px 1px 10px;
-        background: #ceb3a7;
-    }
-
-    #logos-container a p {
-        font-size: 14px;
-    }
-
-}
- */
 
 @media screen and (min-width: 1224px) {
 
@@ -32,7 +18,7 @@
         top: 3px;
         left: 0;
         background: none;
-        z-index: 4;
+        z-index: 6;
         cursor: pointer;
     }
 

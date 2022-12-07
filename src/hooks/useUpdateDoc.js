@@ -17,11 +17,9 @@ export const useUpdateDoc = (collection, id, key) => {
 
         updateDoc(doc(db, collection, id), object)
             .then(() => {
-                console.log('info updated');
                 setUpdateSucceeded(true);
             })
             .catch(err => {
-                console.log('err.message', err.message)
                 setUpdateError(err.message)
             })
     }

@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Home from './Home';
 import Gallery from './Gallery';
 import { AnimatePresence, useScroll } from "framer-motion";
 import NavigationBar from "./NavigationBar";
 import Questions from "./Questions";
 import Admin from "./Admin";
+import { useMediaQuery } from "react-responsive";
 
 
 const AnimatedRoutes = () => {
+
+    const isDesktopOrLaptop = useMediaQuery({query: '(min-width: 1224px)'})
 
     const location = useLocation() // useLocation is the only way to make Routes animation work (comparing to animation on an element inside a component)
     const [info, setInfo] = useState(false) //When info = false, the navigation bar will be closed
@@ -31,7 +34,8 @@ const AnimatedRoutes = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/gallery" element={<Gallery />} />
                     <Route path="/questions" element={<Questions />} />
-                    <Route path="/admin" element={<Admin />} />
+                    {!isDesktopOrLaptop && <Route path="/admin" element={<Admin />} />}
+                    <Route path="*" element={<Navigate to='/' />} />
                 </Routes>
             </AnimatePresence>
         </div>

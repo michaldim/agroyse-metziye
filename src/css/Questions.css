@@ -1,8 +1,6 @@
 #questions-container {
-    /* padding-top: 40px;
-    padding-bottom: 40px; */
     position: relative;
-    background: #ffffec;      /*ecd978 */
+    background: #ffffec;      
     border: 30px solid #eee097;
     height: calc(100vh - 132.4px);
     overflow-y: scroll;
@@ -19,17 +17,14 @@
 
 #questions-container .details {
     margin: 30px 5%;
-    /* margin-right: 5%;
-    margin-left: 5%;
-    margin-bottom: 16px; */
     text-align: right;
     line-height: 1.6;
     font-size: 18px;
-    color: #8848b5; /*92439B  */
+    color: #8848b5; 
 }
 
 #questions-container .details strong {
-    color: #8848b5; /*92439B  */
+    color: #8848b5;
 }
 
 #questions-container .details .tourLink {
@@ -38,13 +33,10 @@
 
 #questions-container .tourLink {
     margin: 16px 5%;
-    /* margin-right: 5%;
-    margin-left: 5%;
-    margin-bottom: 16px; */
     text-align: right;
     line-height: 1.6;
     font-size: 18px;
-    color: #7c3392; /*92439B  */
+    color: #7c3392; 
 }
 
 

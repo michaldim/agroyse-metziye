@@ -12,7 +12,6 @@ export const useLogin = () => {
             .then(res => {
             })
             .catch(err => {
-                console.log('err.message', err.message)
                 setError(err.message)
             })
     }

@@ -8,8 +8,8 @@ const Login = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const { error, loginUser, signedIn } = useLogin()
-    const { loginStatus, checkingAuthChange } = useOnAuthStateChanged()
+    const { error, loginUser } = useLogin()
+    const { checkingAuthChange } = useOnAuthStateChanged()
 
 
     const handleSubmit = e => {

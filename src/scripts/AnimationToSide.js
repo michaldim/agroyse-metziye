@@ -7,7 +7,6 @@ const AnimationToSide = ({inView, src, alt, id, startingPoint}) => {
     const animationToSide = useAnimation()
 
     useEffect(() => {
-        console.log("Element is in view: ", inView);
         if(inView) {
             animationToSide.start({
                 x: 0, 

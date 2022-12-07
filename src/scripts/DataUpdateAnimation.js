@@ -9,7 +9,8 @@ const updaterVariants = {
     visible: {
         scale: [1, 1.2],
         transition: {
-            yoyo: Infinity,
+            repeat: Infinity,
+            repeatType: 'reverse',
             duration: 0.8
         }
     }
