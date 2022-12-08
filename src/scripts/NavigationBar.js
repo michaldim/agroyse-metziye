@@ -5,12 +5,34 @@ import { useMediaQuery } from 'react-responsive';
 import ClosingXSVG from './SVGs/ClosingXSVG';
 
 
+const logoAnimationVariants = {
+    hover: {
+        scale: [1, 1.15, 1, 1.15, 1],
+        transition: {
+            duration: 1.2
+        }
+    }
+}
+
+
 
 const NavigationBar = ({info, setInfo}) => {    // The prop comes from AnimatedRoutes.js
 
     const isDesktopOrLaptop = useMediaQuery({query: '(min-width: 1224px)'})
 
     const navigate = useNavigate();
+
+    let variants;
+    let whileHover;
+
+    if (isDesktopOrLaptop) {
+        variants= logoAnimationVariants;
+        whileHover='hover';
+    } else {
+        variants = {};
+        whileHover='';
+    }
+
 
     const changeRoute = (location) => {
         navigate(location);
@@ -58,9 +80,9 @@ const NavigationBar = ({info, setInfo}) => {    // The prop comes from AnimatedR
 
             {isDesktopOrLaptop && (
                 <div id="navBar-LaptopAndDesktopContainer">
-                    <p onClick={() => changeRoute('/')}>עמוד הבית</p>
-                    <p onClick={() => changeRoute('/gallery')}>גלריה</p>
-                    <p onClick={() => changeRoute('/questions')}>שאלות ותשובות</p>
+                    <motion.p onClick={() => changeRoute('/')} variants={variants} whileHover={whileHover}>עמוד הבית</motion.p>
+                    <motion.p onClick={() => changeRoute('/gallery')} variants={variants} whileHover={whileHover}>גלריה</motion.p>
+                    <motion.p onClick={() => changeRoute('/questions')} variants={variants} whileHover={whileHover}>שאלות ותשובות</motion.p>
                 </div>
             )}
             

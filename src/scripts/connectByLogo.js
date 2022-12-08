@@ -3,19 +3,19 @@ import '../css/PopUp.css'
 import useWhatsappLink from '../hooks/useWhatsappLink';
 import { useMediaQuery } from 'react-responsive';
 import WhatsAppSVG from './SVGs/WhatsAppSVG';
-import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { useScroll } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import PopUp from './PopUp';
 import { useContext } from 'react';
 import { WhatsAppContext } from './context/WhatsAppContext';
 
 
+
 const logoAnimationVariants = {
     hover: {
-        scale: [1, 1.4, 1, 1.4, 1],
+        scale: [1, 1.35, 1, 1.35, 1],
         transition: {
-            duration: 1
+            duration: 1.2
         }
     }
 }
@@ -25,8 +25,6 @@ const logoAnimationVariants = {
 const ConnectByLogo = () => {  
 
     const isDesktopOrLaptop = useMediaQuery({query: '(min-width: 1224px)'})
-
-    const navigate = useNavigate();
 
     const {adminWhatsappLink} = useWhatsappLink();
 
@@ -49,6 +47,8 @@ const ConnectByLogo = () => {
     let insideColor;
     let phoneVoiceColor;
     let size; //the logos width and height
+    let variants;
+    let whileHover;
 
     if (isDesktopOrLaptop) {
         target = "_blank";
@@ -56,12 +56,16 @@ const ConnectByLogo = () => {
         insideColor = '#696868'; //grey
         phoneVoiceColor = '#f0e2a1'; //lighter yellow
         size = "25px";
+        variants= logoAnimationVariants;
+        whileHover='hover';
     } else {
         target = "_self";
         color = "#555"; //grey
         insideColor = '#ceb698'; //light brown
         phoneVoiceColor = "rgb(105, 104, 104)";
         size = "40px";
+        variants = {};
+        whileHover='';
     }
 
     
@@ -78,14 +82,13 @@ const ConnectByLogo = () => {
             }
             {/* whatsapp logo */}
             {isDesktopOrLaptop && 
-                <div onClick={() => { 
-                    //if the popUp inside Home.js is closed then this popUp can open
+                <motion.div variants={logoAnimationVariants} whileHover='hover'                    onClick={() => { //if the popUp inside Home.js is closed then this popUp can open
                     if (!open) {   
                         setReveal(true)
                     }
                 }}>
                     <WhatsAppSVG color={color} width={size} height={size}/>
-                </div>
+                </motion.div>
             }
 
             {reveal && <PopUp set={setReveal} reveal={reveal} sonId='whatsAppDownload-miniContainer'/>}
@@ -93,7 +96,7 @@ const ConnectByLogo = () => {
 
 
             {/* phone logo */}
-            <a id='phone' href="tel:+972528048222">
+            <motion.a id='phone' href="tel:+972528048222" variants={variants} whileHover={whileHover} >
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={size} height={size} x="0px" y="0px"
                 viewBox="0 0 480.56 480.56" style={{enableBackground: "new 0 0 480.56 480.56"}} xmlSpace="preserve">
                     <g>
@@ -142,14 +145,14 @@ const ConnectByLogo = () => {
                     </g>
                 </svg>
                 {!isDesktopOrLaptop && <p>052-8048222</p>}
-            </a>
+            </motion.a>
             
 
 
 
             {/* facebook logo */}
-            <a href="https://www.facebook.com/drorbarak.nostalgia" target={target} rel="noopener noreferrer">
-                <svg viewBox="0 0 36 36" fill="url(#jc_2)" height={size} width={size}>
+            <a href="https://www.facebook.com/drorbarak.nostalgia" target={target} rel="noopener noreferrer" >
+                <motion.svg viewBox="0 0 36 36" fill="url(#jc_2)" height={size} width={size} variants={variants} whileHover={whileHover}>
                     <defs>
                         <linearGradient x1="50%" x2="50%" y1="97.0782153%" y2="0%" id="jc_2">
                             <stop offset="0%" stopColor={color}></stop>
@@ -158,7 +161,7 @@ const ConnectByLogo = () => {
                     </defs>
                     <path d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z"></path>
                     <path fill={insideColor} d="M25 23l.8-5H21v-3.5c0-1.4.5-2.5 2.7-2.5H26V7.4c-1.3-.2-2.7-.4-4-.4-4.1 0-7 2.5-7 7v4h-4.5v5H15v12.7c1 .2 2 .3 3 .3s2-.1 3-.3V23h4z"></path>
-                </svg>
+                </motion.svg>
                 {!isDesktopOrLaptop && <p>Facebook</p>}
             </a>
             
