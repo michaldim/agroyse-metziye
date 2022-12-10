@@ -17,31 +17,29 @@ const WhoCanCome = ({animate, transition}) => { //The prop comes from TextualInf
     let travelerSize;
     let sofaSize;
     let sofaViewBox;
-    let elementScale;
     let animation;
+    let transitionHere;
 
     if (isDesktopOrLaptop) {
         familySize = "60px";
         travelerSize = "44px";
         sofaSize = "60px";
         sofaViewBox = '0 0 390.672 283.672';
-        elementScale = [1, 1.2, 1];
         animation = animate; //from the prop
-        transition = transition; //from the prop
+        transitionHere = transition; //from the prop
     } else {
         familySize = "80px";
         travelerSize = "60px";
         sofaSize = "70px";
         sofaViewBox = '0 0 390.672 390.672';
-        elementScale = [1];
         animation = {};
-        transition = {duration: 0, delay: 0};
+        transitionHere = {duration: 0, delay: 0};
     }
 
 
     return (  
 
-            <motion.div id="whoCanCome-container" animate={animation} transition={transition}>
+            <motion.div id="whoCanCome-container" animate={animation} transition={transitionHere}>
 
                 <div>  
                     <p id="whoCanCome-header">

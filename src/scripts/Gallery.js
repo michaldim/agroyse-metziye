@@ -24,8 +24,17 @@ const Gallery = () => {
     useEffect(() => {
         const fastInterval = setInterval(() => {
             if (ref.current.clientHeight > window.innerHeight) {
-                setUntilMounts(false)
-                clearInterval(fastInterval)
+                if(isDesktopOrLaptop) {
+                    setTimeout(() => {
+                        setUntilMounts(false)
+                    }, 500);
+                } else {
+                    setTimeout(() => {
+                        setUntilMounts(false)
+                    }, 1000);
+                }
+                
+                clearInterval(fastInterval);
             }
         }, 100)
     }, [])

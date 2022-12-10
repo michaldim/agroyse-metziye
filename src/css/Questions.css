@@ -2,7 +2,7 @@
     position: relative;
     background: #ffffec;      
     border: 30px solid #eee097;
-    height: calc(100vh - 132.4px);
+    /* height: calc(100% - 132.4px); */
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -43,7 +43,7 @@
 @media screen and (min-width: 1224px) {
 
     #questions-container {
-        height: auto;
+        /* height: auto; */
         overflow-y: hidden;
         overflow-x: hidden;
     }

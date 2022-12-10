@@ -84,9 +84,9 @@ const Home = () => {
                 <div id="kovesetImg-container">
                     <img id="kovesetGif" src={laundry} alt="כובסת"/>
                     <div className="darkBackground"></div>
-                    <a href={`${adminWhatsappLink}`} className="ticketsButton" target={target} rel="noopener noreferrer">
+                    <motion.a href={`${adminWhatsappLink}`} className="ticketsButton" target={target} rel="noopener noreferrer"  variants={buttonVariants} animate='visible'>
                         <p>לתיאום ביקור</p>
-                    </a>
+                    </motion.a>
                     <div id="drorWithElmet-container" ref={ref}>
                         <AnimationToSide inView={inView} src={drorWithElmet} id={"drorWithElmet"}  alt="דרור החייל" startingPoint={'100vw'}/>
                     </div> 

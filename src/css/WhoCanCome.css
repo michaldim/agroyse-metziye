@@ -36,14 +36,22 @@
 
 #radio {
     display: block;
-    width: 35%;
+    width: 37%;
     position: absolute;
-    top: -38px;
+    top: -36px;
     right: 15px;
 }
 
 
- @media screen and (min-width: 1224px) {
+@media screen and (min-width: 520px) {
+    #radio {
+        display: none;
+    }
+
+}
+
+
+@media screen and (min-width: 1224px) {
 
     #textualInfo-container #whoCanCome-container {
         display: block;
