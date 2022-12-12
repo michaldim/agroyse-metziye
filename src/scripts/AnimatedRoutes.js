@@ -34,7 +34,7 @@ const AnimatedRoutes = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/gallery" element={<Gallery />} />
                     <Route path="/questions" element={<Questions />} />
-                    {!isDesktopOrLaptop && <Route path="/admin" element={<Admin />} />}
+                    <Route path="/nihul" element={<Admin />} />
                     <Route path="*" element={<Navigate to='/' />} />
                 </Routes>
             </AnimatePresence>

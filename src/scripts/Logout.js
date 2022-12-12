@@ -7,7 +7,7 @@ const Logout = () => {
     const { logoutUser } = useLogout()
 
     return ( 
-        <div>
+        <div id="signOutButton-container">
             <p id="signOutButton" onClick={logoutUser}>התנתק</p>
         </div> 
     );

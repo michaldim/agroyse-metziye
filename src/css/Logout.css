@@ -6,3 +6,16 @@
     margin-right: 2px;
     margin-top: 10px;
 }
+
+
+@media screen and (min-width: 1224px) {
+    
+  #signOutButton-container {
+    margin-top: 5%;
+  }
+
+  #signOutButton {
+    cursor: pointer;
+  }
+
+}

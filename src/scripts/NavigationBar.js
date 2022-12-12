@@ -73,7 +73,6 @@ const NavigationBar = ({info, setInfo}) => {    // The prop comes from AnimatedR
                         <p onClick={() => changeRoute('/')}>עמוד הבית</p>
                         <p onClick={() => changeRoute('/gallery')}>גלריה</p>
                         <p onClick={() => changeRoute('/questions')}>שאלות ותשובות</p>
-                        <p onClick={() => changeRoute('/admin')}>כניסה למערכת</p>
                     </motion.div>
                 )}
             </AnimatePresence>

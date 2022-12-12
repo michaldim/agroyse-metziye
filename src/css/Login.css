@@ -65,3 +65,16 @@
 #signInBox #loginErr span {
     background: rgba(255, 255, 255, 0.8);
 }
+
+
+@media screen and (min-width: 1224px) {
+
+    #signInBox {
+        width: 450px;
+        margin: 5% auto 0 auto;
+        left: 0;
+        right: 0;
+    }
+
+}
+
